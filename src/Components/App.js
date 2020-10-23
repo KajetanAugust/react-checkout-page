@@ -4,7 +4,7 @@ import '../App.css';
 import Header from "./Header";
 import ProductCard from "./ProductCard";
 import ShippingAndTotal from "./ShippingAndTotal";
-// import CheckoutComplete from "./CheckoutComplete";
+import CheckoutComplete from "./CheckoutComplete";
 
 class App extends Component {
 
