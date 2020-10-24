@@ -1,4 +1,4 @@
-#React Cart Checkout Mockup
+# React Cart Checkout Mockup
 
 This is a functional mockup design of Cart Checkout.
 It includes one product for demonstrating functionality.
