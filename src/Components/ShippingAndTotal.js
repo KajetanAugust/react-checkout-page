@@ -3,6 +3,10 @@ import {Link} from "react-router-dom";
 
 class ShippingAndTotal extends Component {
 
+    noQuantityAlert = () => {
+        alert('Your cart is empty or products quantity is equal zero')
+    }
+
     render() {
         const { shipping, quantity, unitPrice } = this.props
         const subtotal = quantity * unitPrice;
@@ -10,7 +14,7 @@ class ShippingAndTotal extends Component {
             <div className="shipping-and-total">
                 <div className="shipping-div">
                     <p>SHIPPING</p>
-                    <p>${(subtotal > 100 ? 0 : shipping).toFixed(2)}</p>
+                    <p>${subtotal > 100 ? 0 :(subtotal > 100 ? 0 : shipping).toFixed(2)}</p>
                 </div>
                 <div className="total-wrap">
                     <p>CART TOTALS</p>
@@ -22,7 +26,16 @@ class ShippingAndTotal extends Component {
                         <p>Grand Total</p>
                         <p>${subtotal === 0 ? 0 :(subtotal + (subtotal > 100 ? 0 : shipping)).toFixed(2)}</p>
                     </div>
-                    <Link to='/checkout-complete'><button>Proceed to checkout</button></Link>
+                    {
+                        quantity !== 0
+                        ?
+                            <Link to='/checkout-complete'><button>Proceed to checkout</button></Link>
+                        :
+                            <button
+                                onClick={this.noQuantityAlert}
+                                style={{backgroundColor:'lightgray', border:'none', color:'white'}}
+                            >Proceed to checkout</button>
+                    }
                 </div>
             </div>
         );

@@ -9,7 +9,7 @@ import CheckoutComplete from "./CheckoutComplete";
 
 class App extends Component {
     state= {
-        quantity: 2,
+        quantity: 1,
         unitPrice: 11.90,
         shipping: 23.80,
     }
@@ -29,6 +29,7 @@ class App extends Component {
                     <Fragment>
                         <Header
                             handleCheckout={this.handleCheckout}
+                            quantity={this.state.quantity}
                         />
                         <main className='main-wrapper'>
                             <ProductCard

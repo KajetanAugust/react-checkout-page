@@ -156,8 +156,13 @@ button:hover {
 }
 
 .x-and-edit {
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
+  margin-left: 5px;
+}
+
+.x-and-edit:hover {
+  box-shadow: 0 0 5px var(--lightgray);
 }
 
 /*PRODUCT CARD FOOTER*/

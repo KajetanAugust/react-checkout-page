@@ -74,6 +74,7 @@ class ProductCard extends Component {
                                         onClick={this.handleQuantIncrease}
                                     >+</button>
                                     <img
+                                        className='x-and-edit'
                                         src='images/edit-img.png'
                                         alt='edit button'
                                         onClick={this.handleQuantitySetting}
