@@ -2,6 +2,36 @@ import React, {Component} from 'react'
 
 class ProductCard extends Component {
 
+    state = {
+        newQuant: 0
+    }
+
+    componentDidMount() {
+        this.setState({
+            newQuant: this.props.quantity
+        })
+    }
+
+    handleQuantIncrease = () => {
+        const quantToSet = this.state.newQuant + 1;
+        this.setState({
+            newQuant: quantToSet
+        })
+    }
+
+    handleQuantDecrease = () => {
+        if(this.state.newQuant > 0) {
+            const quantToSet = this.state.newQuant - 1;
+            this.setState({
+                newQuant: quantToSet
+            })
+        }
+    }
+
+    handleQuantitySetting = () => {
+        this.props.handleQuantChange(this.state.newQuant)
+    }
+
     render() {
         return (
             <div className='product-card'>
@@ -15,17 +45,29 @@ class ProductCard extends Component {
                         <img className='product-image' src='images/headphones.png' alt='Photo of headphones' />
                             <div className='product-info'>
                                 <p>Headphones</p>
-                                <p>$11.90</p>
+                                <p>${this.props.unitPrice.toFixed(2)}</p>
                                 <div className='quantity-changer'>
-                                    <button className='quantity-button'>-</button>
-                                    <p className='quantity'>2</p>
-                                    <button className='quantity-button'>+</button>
-                                    <img src='images/edit-img.png' alt='edit button' />
+                                    <button
+                                        className='quantity-button'
+                                        onClick={this.handleQuantDecrease}
+                                    >-</button>
+                                    <p className='quantity'>{this.state.newQuant}</p>
+                                    <button
+                                        className='quantity-button'
+                                        onClick={this.handleQuantIncrease}
+                                    >+</button>
+                                    <img
+                                        src='images/edit-img.png'
+                                        alt='edit button'
+                                        onClick={this.handleQuantitySetting}
+                                    />
                                 </div>
                             </div>
                 </div>
                 <div className='product-card-footer'>
-                    <button>Update Shopping Cart</button>
+                    <button
+                        onClick={this.handleQuantitySetting}
+                    >Update Shopping Cart</button>
                 </div>
             </div>
         )
