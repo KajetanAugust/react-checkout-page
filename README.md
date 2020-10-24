@@ -2,40 +2,40 @@
 
 This is a functional mockup design of Cart Checkout.
 It includes one product for demonstrating functionality.
-The page was created using React, react-router and react-icons.
+The page created using [React](https://reactjs.org), [React router](https://reactrouter.com) and [react-icons](https://react-icons.github.io/react-icons/).
 <br><br>
-Cross-browser consistency was tested for Google Chrome, Mozilla Firefox, Safari and Opera browsers.
+Cross-browser consistency tested for Google Chrome, Mozilla Firefox, Safari and Opera browsers.
 
-###Quantity
+### Quantity
 The quantity of product can be changed using + and - buttons. 
 Pressing the buttons changes quantity on product card.
 Pressing **pencil** or **Update Shopping Cart** buttons will update the **Subtotal** and  **Grand Total** values.
 
-###Removing Product
+### Removing Product
 Product can be removed by pressing **X** button. **"The cart is empty"** message will be displayed instead of the product.
 
-###Shipping cost
+### Shipping cost
 Shipping cost is **$23.80** for orders **under $100**. If order value is **above $100** the shipping cost is **$0**.
 
-###Cart totals
+### Cart totals
 Cart total contains Subtotal and Grand Total. 
 * **Subtotal** is the price of products in a cart multiplied by the quantity of products.
 * **Grand Total** is the Subtotal value plus Shipping cost.
 
-###Proceed to checkout buttons
+### Proceed to checkout buttons
 * **Buttons are enabled** when order value is above $0. 
 * Pressing **enabled** buton link the user to checkout confirmation page [http://localhost:3000/checkout-complete](http://localhost:3000/checkout-complete) using react-router-dom Link.
 * **Buttons are disabled** and grayed-out When the order value is $0 to prevent sending empty orders. 
 * Pressing **disabled** button will show alert informing that "The cart is empty or products quantity is equal zero."
 
 
-#Running the project
+# Running the project
 
-###Installing dependencies
+### Installing dependencies
 
 Use `npm install` or `yarn install` to install project dependencies.
 
-###Starting application
+### Starting application
 
 Use `npm start` or `yarn start` to start the project.
 Project will run on [http://localhost:3000](http://localhost:3000)
