@@ -140,7 +140,7 @@ button:hover {
 }
 
 .quantity {
-  padding-top: 0.6rem;
+  padding-top: 0.5rem;
   border: 2px inset var(--black);
   text-align: center;
 }
