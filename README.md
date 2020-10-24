@@ -2,7 +2,7 @@
 
 This is a functional mockup design of Cart Checkout.
 It includes one product for demonstrating functionality.
-The page created using [React](https://reactjs.org), [React router](https://reactrouter.com) and [react-icons](https://react-icons.github.io/react-icons/).
+Page created using [React](https://reactjs.org), [React router](https://reactrouter.com), [react-icons](https://react-icons.github.io/react-icons/) and [Create React App](https://create-react-app.dev).
 <br><br>
 Cross-browser consistency tested for Google Chrome, Mozilla Firefox, Safari and Opera browsers.
 
