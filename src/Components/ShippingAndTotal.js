@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 class ShippingAndTotal extends Component {
 
     noQuantityAlert = () => {
-        alert('Your cart is empty or products quantity is equal zero')
+        alert('The cart is empty or products quantity is equal zero.')
     }
 
     render() {
