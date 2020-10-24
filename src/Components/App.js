@@ -1,5 +1,4 @@
-import React, {Component} from 'react'
-import { Route } from 'react-router-dom'
+import React, {Component, Fragment} from 'react'
 import '../App.css';
 
 import Header from "./Header";
@@ -21,25 +20,43 @@ class App extends Component {
         })
     }
 
+    handleCheckout = () => {
+        this.setState({
+            isCheckout: true
+        })
+    }
+
   render() {
 
     return (
         <div className="App">
-                    <Header/>
-                    <main className='main-wrapper'>
-                        <ProductCard
-                            quantity={this.state.quantity}
-                            unitPrice={this.state.unitPrice}
-                            handleQuantChange={this.handleQuantChange}
-                        />
-                        <ShippingAndTotal
-                            quantity={this.state.quantity}
-                            unitPrice={this.state.unitPrice}
-                            shipping={this.state.shipping}
-                        />
-                    </main>
 
-                <CheckoutComplete />
+            {
+                this.state.isCheckout === false
+                    ?
+                    <Fragment>
+                        <Header
+                            handleCheckout={this.handleCheckout}
+                        />
+                        <main className='main-wrapper'>
+                            <ProductCard
+                                quantity={this.state.quantity}
+                                unitPrice={this.state.unitPrice}
+                                handleQuantChange={this.handleQuantChange}
+                            />
+                            <ShippingAndTotal
+                                quantity={this.state.quantity}
+                                unitPrice={this.state.unitPrice}
+                                shipping={this.state.shipping}
+                                handleCheckout={this.handleCheckout}
+                            />
+                        </main>
+                    </Fragment>
+                    :
+                    <CheckoutComplete />
+            }
+
+
 
         </div>
     );

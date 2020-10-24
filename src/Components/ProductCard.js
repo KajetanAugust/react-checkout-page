@@ -3,7 +3,8 @@ import React, {Component} from 'react'
 class ProductCard extends Component {
 
     state = {
-        newQuant: 0
+        newQuant: 0,
+        isDeleted: false,
     }
 
     componentDidMount() {
@@ -32,6 +33,14 @@ class ProductCard extends Component {
         this.props.handleQuantChange(this.state.newQuant)
     }
 
+    handleProductDelete = () => {
+        this.setState({
+            isDeleted: true,
+            newQuant: 0
+        })
+        this.props.handleQuantChange(0)
+    }
+
     render() {
         return (
             <div className='product-card'>
@@ -40,9 +49,17 @@ class ProductCard extends Component {
                     <p>Unit Price</p>
                     <p>Qty</p>
                 </div>
-                <div className='product-card-body'>
-                    <img className='x-and-edit' src='images/x-img.png' alt='x button' />
-                        <img className='product-image' src='images/headphones.png' alt='Photo of headphones' />
+                {
+                    this.state.isDeleted === false
+                    ?
+                        <div className='product-card-body'>
+                            <img
+                                className='x-and-edit'
+                                src='images/x-img.png'
+                                alt='x button'
+                                onClick={this.handleProductDelete}
+                            />
+                            <img className='product-image' src='images/headphones.png' alt='Photo of headphones' />
                             <div className='product-info'>
                                 <p>Headphones</p>
                                 <p>${this.props.unitPrice.toFixed(2)}</p>
@@ -63,7 +80,13 @@ class ProductCard extends Component {
                                     />
                                 </div>
                             </div>
-                </div>
+                        </div>
+                        :
+                        <div className='product-card-body'>
+                            <p>The cart is empty</p>
+                        </div>
+                }
+
                 <div className='product-card-footer'>
                     <button
                         onClick={this.handleQuantitySetting}

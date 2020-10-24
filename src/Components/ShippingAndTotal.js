@@ -15,13 +15,15 @@ class ShippingAndTotal extends Component {
                     <p>CART TOTALS</p>
                     <div className="subtotal">
                         <p>Subtotal</p>
-                        <p>${subtotal.toFixed(2)}</p>
+                        <p>${subtotal === 0 ? 0 : subtotal.toFixed(2)}</p>
                     </div>
                     <div className="grand-total">
                         <p>Grand Total</p>
-                        <p>${(subtotal + (subtotal > 100 ? 0 : shipping)).toFixed(2)}</p>
+                        <p>${subtotal === 0 ? 0 :(subtotal + (subtotal > 100 ? 0 : shipping)).toFixed(2)}</p>
                     </div>
-                    <button>Proceed to checkout</button>
+                    <button
+                        onClick={this.props.handleCheckout}
+                    >Proceed to checkout</button>
                 </div>
             </div>
         );
