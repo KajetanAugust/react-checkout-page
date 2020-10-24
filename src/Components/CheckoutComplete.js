@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
+import { FcApproval } from "react-icons/fc";
 
 class CheckoutComplete extends Component {
     render() {
         return (
             <div className='checkout-complete'>
-                <h1>Your order has been submitted successfully</h1>
+                <FcApproval className='approve-icon' />
+                <h2>Your order has been submitted successfully</h2>
             </div>
         );
     }

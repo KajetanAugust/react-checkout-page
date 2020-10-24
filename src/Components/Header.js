@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from "react-router-dom";
 
 class Header extends Component {
 
@@ -6,9 +7,7 @@ class Header extends Component {
         return (
             <header>
                 <h1>Shopping Cart</h1>
-                <button
-                    onClick={this.props.handleCheckout}
-                >Proceed to checkout</button>
+                <Link to='/checkout-complete'><button>Proceed to checkout</button></Link>
             </header>
         );
     }

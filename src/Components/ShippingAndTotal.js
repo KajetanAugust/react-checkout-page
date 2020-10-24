@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from "react-router-dom";
 
 class ShippingAndTotal extends Component {
 
@@ -21,9 +22,7 @@ class ShippingAndTotal extends Component {
                         <p>Grand Total</p>
                         <p>${subtotal === 0 ? 0 :(subtotal + (subtotal > 100 ? 0 : shipping)).toFixed(2)}</p>
                     </div>
-                    <button
-                        onClick={this.props.handleCheckout}
-                    >Proceed to checkout</button>
+                    <Link to='/checkout-complete'><button>Proceed to checkout</button></Link>
                 </div>
             </div>
         );

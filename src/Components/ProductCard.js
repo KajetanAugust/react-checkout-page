@@ -59,7 +59,7 @@ class ProductCard extends Component {
                                 alt='x button'
                                 onClick={this.handleProductDelete}
                             />
-                            <img className='product-image' src='images/headphones.png' alt='Photo of headphones' />
+                            <img className='product-image' src='images/headphones.png' alt='Headphones' />
                             <div className='product-info'>
                                 <p>Headphones</p>
                                 <p>${this.props.unitPrice.toFixed(2)}</p>

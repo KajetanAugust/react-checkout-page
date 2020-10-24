@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react'
+import { Route } from 'react-router-dom'
 import '../App.css';
 
 import Header from "./Header";
@@ -8,10 +9,9 @@ import CheckoutComplete from "./CheckoutComplete";
 
 class App extends Component {
     state= {
-        quantity: 3,
+        quantity: 2,
         unitPrice: 11.90,
         shipping: 23.80,
-        isCheckout: false,
     }
 
     handleQuantChange = (quantityToSet) => {
@@ -20,20 +20,12 @@ class App extends Component {
         })
     }
 
-    handleCheckout = () => {
-        this.setState({
-            isCheckout: true
-        })
-    }
-
   render() {
 
     return (
         <div className="App">
 
-            {
-                this.state.isCheckout === false
-                    ?
+            <Route exact path='/' render={() => (
                     <Fragment>
                         <Header
                             handleCheckout={this.handleCheckout}
@@ -52,11 +44,9 @@ class App extends Component {
                             />
                         </main>
                     </Fragment>
-                    :
-                    <CheckoutComplete />
-            }
-
-
+                )}
+            />
+            <Route path='/checkout-complete' component={CheckoutComplete} />
 
         </div>
     );

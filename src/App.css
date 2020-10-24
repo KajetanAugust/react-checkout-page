@@ -251,7 +251,19 @@ button:hover {
 
 .checkout-complete {
   text-align: center;
-  margin-top: 100px;
+  margin: 100px auto auto auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 50%;
+  border: 1px solid lightgray;
+}
+
+.checkout-complete h2 {
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+.approve-icon {
+  height: 100px;
+  width: 100px;
 }
